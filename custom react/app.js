@@ -19,3 +19,24 @@ const jsxheading = <h1 id="heading" className="head">my name  is shashank shukla
 const jsxroot = ReactDOM.createRoot(document.getElementById("root"));
 
 jsxroot.render(jsxheading)
+
+//react componenet
+// class based component - old
+// function based component - new
+
+// react Functional component => 
+const HeadingComponent  = () => {
+  return <h1> this is functional based component  1 </h1>
+};
+const HeadingComponent2  = () =>  <h1> this is functional based component 2</h1>;
+const HeadingComponent3  = () =>  {
+
+  return <div id="heading">
+      <HeadingComponent/>
+      <h1> this is functional based component 3</h1>
+   </div>
+};
+
+const rootcomponent = ReactDOM.createRoot(document.getElementById("root"));
+
+rootcomponent.render(<HeadingComponent3 />)
