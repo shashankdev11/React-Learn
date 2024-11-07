@@ -2,8 +2,9 @@
   "name": "namasteyreact",
   "version": "1.0.0",
   "description": "this is description of namastey react",
-  
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
