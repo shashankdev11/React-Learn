@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card">
+      <img
+        src="https://avatars.githubusercontent.com/u/11613311?v=4"
+        alt="Avatar"
+        style="width: 100%"
+      />
+      <div class="container">
+        <h4><b>Hitesh Choudhary</b></h4>
+        <div class="input">
+          <p>followers:<input type="text" id="followers" /></p>
+          <p>followings:<input type="text" id="following" /></p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.github.com/users/");
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        console.log(this.responseText);
+        const data = JSON.parse(this.responseText);
+        console.log(data);
+        console.log(data.avatar_url);
+        document.getElementById("followers").value = data.followers;
+        document.getElementById("following").value = data.following;
+        console.log(data.following);
+      }
+    };
+
+    xhr.send();
+  </script>
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+      background-color: aquamarine;
+    }
+    .container {
+      padding: 0 16px;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</html>
