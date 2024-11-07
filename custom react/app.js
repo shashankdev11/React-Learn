@@ -32,7 +32,11 @@ const HeadingComponent2  = () =>  <h1> this is functional based component 2</h1>
 const HeadingComponent3  = () =>  {
 
   return <div id="heading">
+    
+      <HeadingComponent></HeadingComponent>
       <HeadingComponent/>
+      <h1> {jsxheading}</h1>
+      {HeadingComponent2()}
       <h1> this is functional based component 3</h1>
    </div>
 };
